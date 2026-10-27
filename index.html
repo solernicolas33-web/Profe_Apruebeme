@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Cartel: Profe Apruébeme.">
+  <title>Profe Apruébeme</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #f8fafc;
+      --heart: #ef4444;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .sign {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.5rem, 2.5vmin, 2rem);
+      width: 100%;
+      max-width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: clamp(1rem, 4vmin, 3rem);
+      text-align: center;
+    }
+
+    .heart {
+      display: block;
+      flex: 0 0 auto;
+      width: clamp(3.5rem, 18vmin, 11rem);
+      height: auto;
+      color: var(--heart);
+      filter: drop-shadow(0 0 clamp(0.4rem, 2vmin, 1.6rem) rgba(239, 68, 68, 0.65));
+      transform-origin: center;
+      animation: pulse 1.2s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .sign__text {
+      margin: 0;
+      max-width: 100%;
+      font-size: clamp(1.5rem, 8.5vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: clamp(0.01em, 0.15vw, 0.04em);
+      text-transform: uppercase;
+      text-wrap: balance;
+      overflow-wrap: break-word;
+      color: var(--fg);
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .heart {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sign">
+    <svg class="heart" viewBox="0 0 32 32" role="img" aria-label="Corazón" focusable="false">
+      <path fill="currentColor" d="M23.6 2c-3.4 0-6.3 1.9-7.6 4.6C14.7 3.9 11.8 2 8.4 2 3.8 2 0 5.8 0 10.4c0 8.8 16 19.6 16 19.6s16-10.8 16-19.6C32 5.8 28.2 2 23.6 2z"/>
+    </svg>
+    <h1 class="sign__text">PROFE APRUÉBEME</h1>
+  </main>
+</body>
+</html>
